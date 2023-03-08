@@ -1,0 +1,16 @@
+// devcontainer.json
+{
+  "name": "Flutter Dev Container",
+  "image": "google/dart:latest",
+  "extensions": ["dart-code.dart-sdk", "dart-code.flutter"],
+  "settings": {
+    "dart.sdkPath": "/usr/lib/dart",
+    "dart.flutterSdkPath": "/usr/lib/flutter"
+  },
+  "appPort": [8000, 9000],
+  "postCreateCommand": "flutter doctor && flutter pub get && flutter packages get",
+  "forwardPorts": [8080],
+  "remoteUser": "vscode",
+  "workspaceFolder": "/workspace",
+  "mounts": ["source=flutter_sdk,target=/usr/lib/flutter,type=bind,consistency=cached"]
+}
